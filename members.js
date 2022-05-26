@@ -14,21 +14,26 @@ module.exports = client => {
 
     if (oldUserChannel === null && newUserChannel !== null) {
       // User Join a voice channel
-      channel.send((await member).displayName+" join "+(await channelIn).name);
       
-      // Handle your save when user join in memcache, database , ...
+      channel.send((await member).displayName+" join "+(await channelIn).name);
+      console.log((await member).displayName+" join "+(await channelIn).name);
+      
     } else if (oldUserChannel !== null && newUserChannel === null) {
       // User Leave a voice channel  
+      
       channel.send((await member).displayName+" from "+(await channelOut).name+" leave");
-      // Calculate with previous save time to get in voice time
+      console.log((await member).displayName+" from "+(await channelOut).name+" leave");
+
     } else if (
       oldUserChannel !== null &&
       newUserChannel !== null &&
       oldUserChannel.id != newUserChannel.id
     ) {
       // User Switch a voice channel
+      
       channel.send((await member).displayName+" move to "+(await channelIn).name);
-      // This is bonus if you want to do something futhermore
+      console.log((await member).displayName+" move to "+(await channelIn).name);
+      
     }
   });
 }
