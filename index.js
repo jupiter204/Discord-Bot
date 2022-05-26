@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({intents: 32767});
 const members = require("./members");
-const keepAlive = require("./server.js");
+//const keepAlive = require("./server.js");
 
 client.on("ready", ()=>{
     console.log(`Logged in as ${client.user.tag}!`);
