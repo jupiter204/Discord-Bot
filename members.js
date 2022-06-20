@@ -1,5 +1,5 @@
 module.exports = client => {
-  let channel = client.channels.cache.get('973894934056824882');
+  let channel = client.channels.cache.get('988075822780915748');
   client.on('voiceStateUpdate', async (oldState, newState) => {
 
     let newUserChannel = newState.channel;
